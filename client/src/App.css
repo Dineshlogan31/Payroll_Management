@@ -1,0 +1,68 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/* .Alert {
+  position: absolute;
+  height: 25%;
+  width: 20%;
+  margin: 15% 40%;
+} */
+.SideBar {
+  height: 100%;
+  width: 15%;
+  background-color: #242d4b;
+  position: fixed;
+}
+.SideBar .ProfileInfo {
+  height: 20%;
+  width: 100%;
+  color: wheat;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.SidebarList {
+  height: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.SidebarList .SidebarRow {
+  height: 60px;
+  width: 100%;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Mulish, fira-sans-2, sans-serif;
+}
+
+.SidebarList .SidebarRow:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.SideBar .SidebarList #active {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+.SidebarList .SidebarRow #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.SidebarList #title {
+  flex: 70%;
+}
+.components {
+  position: relative;
+  margin-left: 15%;
+  background-color: aqua;
+  height: 100vh;
+}

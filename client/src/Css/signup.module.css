@@ -1,0 +1,151 @@
+.Container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Mulish, sans-serif;
+  color: white;
+}
+
+.Container .login_card {
+  height: auto;
+  width: 40%;
+  margin-top: 50px;
+  background-color: rgb(36, 43, 77);
+  box-shadow: 1px 1px 8px 2px gray;
+  border: 1px solid rgb(36, 43, 77);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Container .login_card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Container .login_card .login_header {
+  margin-top: 25px;
+}
+.Container .login_card .login_header span {
+  text-align: center;
+  margin-left: 1%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: Mulish sans-serif;
+}
+.Container .login_card .login_body {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2rem;
+  margin-left: 20%;
+}
+.Container .login_card .login_body .login_email {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login_card .login_body .login_email label {
+  text-align: left;
+}
+.Container .login_card .login_body .login_email input {
+  height: 2.2rem;
+  width: 80%;
+  border: none;
+  font-family: Mulish;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  color: white;
+}
+
+.Container .login_card .login_body .login_password {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login_card .login_body .login_password label {
+  text-align: left;
+}
+.Container .login_card .login_body .login_password span {
+  position: absolute;
+  margin-left: 14%;
+  cursor: pointer;
+  font-style: italic;
+}
+.Container.login_card .login_body .login_password input {
+  height: 2rem;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 14px;
+  font-family: Mulish;
+}
+
+.Container .login_card .login_body .login_role {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login_card .login_body .login_role select {
+  height: 2.4rem;
+  width: 82%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 14px;
+  font-family: Mulish;
+}
+.Container .login_card .login_body .signup_department {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login_card .login_body .signup_department select {
+  height: 2.4rem;
+  width: 82%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 14px;
+  font-family: Mulish;
+}
+.Container .login_card .login_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 25px;
+}
+.Container .login_card .login_footer button {
+  height: 2.5rem;
+  width: 82%;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: none;
+  border-radius: 5px;
+}
+.Container .login_card .login_footer button:disabled {
+  background-color: rgba(0, 0, 255, 0.9);
+}
+.error {
+  color: red;
+  height: 30px;
+  width: 100%;
+  border: 1px solid red;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

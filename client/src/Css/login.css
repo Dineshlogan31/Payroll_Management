@@ -1,0 +1,113 @@
+.Container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Mulish, sans-serif;
+  color: white;
+}
+.Container .login-card {
+  height: 70%;
+  width: 30%;
+  background-color: rgb(36, 43, 77);
+  box-shadow: 1px 1px 8px 2px gray;
+  border: 1px solid rgb(36, 43, 77);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.Container .login-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.Container .login-card .login-header {
+  margin-top: 10px;
+}
+.Container .login-card .login-header span {
+  text-align: center;
+  margin-left: 1%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: Mulish sans-serif;
+}
+.Container .login-card .login-body {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2rem;
+  margin-left: 20%;
+}
+.Container .login-card .login-body .login-email {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login-card .login-body .login-email label {
+  text-align: left;
+}
+.Container .login-card .login-body .login-email input {
+  height: 2.2rem;
+  width: 80%;
+  border: none;
+  font-family: Mulish;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  color: white;
+}
+
+.Container .login-card .login-body .login-password {
+  display: flex;
+  flex-direction: column;
+}
+.Container .login-card .login-body .login-password span {
+  position: absolute;
+  margin-left: 14%;
+  cursor: pointer;
+  font-style: italic;
+}
+.Container .login-card .login-body .login-password input {
+  height: 2.2rem;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-family: Mulish;
+}
+.Container .login-card .login-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 25px;
+}
+.Container .login-card .login-footer button {
+  height: 2.5rem;
+  width: 82%;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: none;
+  border-radius: 5px;
+}
+.error {
+  color: red;
+  height: 30px;
+  width: 80%;
+  border: 1px solid red;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  text-align: center;
+  padding: 5px;
+}
