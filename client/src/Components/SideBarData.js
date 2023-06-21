@@ -3,9 +3,9 @@ import React from 'react'
 
 export const SideBarData = [
     {
-        title:"Home",
+        title:"Dashboard",
         icon:<i style={{color:"white"}} className="fa-solid fa-house"></i>,
-        link:"/home"
+        link:"/Dashboard"
     },
     {
         title:"Documents",

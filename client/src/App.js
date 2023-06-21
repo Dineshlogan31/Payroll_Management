@@ -11,6 +11,7 @@ import Employee from './Components/Employee/Employee'
 import Mailcomponent from './Components/MailBox/Mailcomponent'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Task from './Components/Tasks/Task'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -23,16 +24,18 @@ const App = () => {
     <div style={{position:"fixed"}}>
     <SideBar/>
     </div>
-        <BrowserRouter>
+        <BrowserRouter> 
         <ToastContainer/>
           <div className='components'>
             <Routes>
-              <Route path='/' element={<Login/>}/>
+              <Route path='/' element={<SideBar/>}/>
+              <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
-              <Route path='/home' element={<Dashboard/>}/>
+              <Route path='/forgetPassword' element={<ForgetPassword/>}/>
               <Route path='/employee' element={<Employee/>}/>
               <Route path='/mailbox' element={<Mailcomponent/>}/>
               <Route path='/tasks' element={<Task/>}/>
+              <Route path='/dashboard' element={<Dashboard/>}/>
             </Routes>
           </div>
         </BrowserRouter>

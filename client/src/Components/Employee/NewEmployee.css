@@ -1,0 +1,22 @@
+.newEmployee {
+  position: absolute;
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 22%;
+  margin-top: -45%;
+  z-index: 111;
+  background-color: white;
+  box-shadow: 50px 50px 30rem 30rem rgba(0, 0, 0, 0.8);
+}
+.Submit-button {
+  height: 10%;
+  width: 30%;
+}
+.cancel-button {
+  height: 10%;
+  width: 30%;
+  margin-left: 40%;
+}
