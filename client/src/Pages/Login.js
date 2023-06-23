@@ -3,6 +3,9 @@ import "../Css/login.css"
 import axios from "axios"
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../Store/UserSlicer'
+import { useAuthContext } from '../hooks/UseAuthContext' 
  const Login = () => {
 
     const [email,setEmail]=useState('')
@@ -10,7 +13,11 @@ import { Link, useNavigate } from 'react-router-dom'
     const [error,setError]=useState(null)
     const user={email,password}
 
+    const value=useAuthContext()
+    console.log(value);
+
     const navigate=useNavigate()
+    const dispatch=useDispatch()
 
     const loginSubmit=(e)=>{
       e.preventDefault()
@@ -21,7 +28,9 @@ import { Link, useNavigate } from 'react-router-dom'
         toast.warning(response.data.VerifyMessage)
       }
        else{
-        toast.success(response.data.Msg)
+       localStorage.setItem("user",response.data.role)
+        dispatch(loginUser(response.data))
+        // toast.success(response.data.Msg)
         setEmail('')
         setPassword('')
         setError(null)

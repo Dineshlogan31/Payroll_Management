@@ -54,7 +54,7 @@ try {
     {
        return res.json({VerifyMessage:"Verify your Email"})
     }
-    res.status(200).json({Msg:"Login successfully"})
+    res.status(200).json(user)
 } catch (error) {
     res.status(404).json({error:error.message})
 }

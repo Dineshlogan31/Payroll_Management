@@ -17,6 +17,8 @@ body {
   width: 15%;
   background-color: #242d4b;
   position: fixed;
+  margin: 0px;
+  padding: 0px;
 }
 .SideBar .ProfileInfo {
   height: 10%;

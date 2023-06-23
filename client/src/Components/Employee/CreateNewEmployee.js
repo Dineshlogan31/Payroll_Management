@@ -143,9 +143,9 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
 
     
 
-      <Button className='Submit-button' onClick={(e)=>{handleEdit(e,editEmployee._id)}} variant="primary" type="submit">
-        {editEmployee?"Update":"Submit"}
-      </Button>
+      
+        {editEmployee?<Button className='Submit-button'  onClick={(e)=>{handleEdit(e,editEmployee._id)}} variant="primary" type="submit">Update</Button>:<Button className='Submit-button'  onClick={(e)=>{submitEmployee(e)}} variant="primary" type="submit">Submit</Button>}
+      
       <Button className='cancel-button' variant="danger" type="submit" onClick={clodeModel}>
         Close
       </Button>

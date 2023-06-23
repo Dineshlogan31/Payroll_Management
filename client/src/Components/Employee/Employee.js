@@ -5,6 +5,8 @@ import CreateNewEmployee from './CreateNewEmployee'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { getAllEmployee,deletEmployee } from '../../Store/EmployeeSlicer'
+import SideBar from '../SideBar'
+
 
 const Employee = () => {
   const employees=useSelector((state)=>state.employee)
@@ -31,7 +33,9 @@ const Employee = () => {
      )
   },[dispatch])
   return (
-    <div style={{position:"absolute"}} >
+    <>
+    <SideBar/>
+    <div style={{position:"relative",marginLeft:"15%"}} >
      <Button onClick={()=>setShow(true)}>Create New Employee</Button><br/>
      <CreateNewEmployee show={show} editEmployee={employeeEdit} clodeModel={()=>setShow(!show)}/>
        <Table responsive>
@@ -76,8 +80,8 @@ const Employee = () => {
         })}
       </tbody>
     </Table>
-    
     </div>
+    </>
   )
 }
 

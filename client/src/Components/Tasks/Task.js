@@ -1,8 +1,13 @@
 import React from 'react'
+import SideBar from '../SideBar'
+
 
 const Task = () => {
   return (
-    <div>Task</div>
+   <>
+   <SideBar/>
+   <div style={{textAlign:"center"}}>Task</div></>
+   
   )
 }
 

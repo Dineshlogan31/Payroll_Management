@@ -72,9 +72,10 @@ export const employeeSlice=createSlice({
      },
      [editEmployeeAsync.fulfilled]:(state,action)=>{
        const index=state.findIndex((employee)=>employee._id===action.payload._id)
-       return state[index]=action.payload
-       
-       
+        state[index]=action.payload
+        return state
+      
+    
      }
     }
 })

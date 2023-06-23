@@ -1,32 +1,27 @@
 import React from 'react'
-import '../App.css'
+import { UserSideBarData } from './UserSideBarData'
 
-import { SideBarData } from './SideBarData'
-// import Employee from './Employee/Employee'
-// import Task from './Tasks/Task'
-// import Dashboard from './Dashboard/Dashboard'
-// import Mailcomponent from './MailBox/Mailcomponent'
-
-
-const SideBar = () => {
-    return (
-        <>
-        <div className='SideBar'>
+const UserSidebar = () => {
+  return (
+   <>
+    <div className='SideBar'>
             <div className='ProfileInfo'>
-                Admin User
+                 User
             </div>
             <ul className='SidebarList'>
                 {
-                    SideBarData.map((value, key) => {
+                    UserSideBarData.map((value, key) => {
                         return <li id={window.location.pathname === value.link ? "active" : ""} key={key} className='SidebarRow' onClick={()=>{window.location.pathname = value.link}}><div id='icon'>{value.icon}</div>
                             <div id='title'>{value.title}</div></li>
                     })
                 }
             </ul>
+
         </div>
-        
-        </>
-    )
+        <div>
+        </div>
+   </>
+  )
 }
 
-export default SideBar
+export default UserSidebar
