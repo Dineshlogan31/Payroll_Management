@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../Store/UserSlicer'
-import { useAuthContext } from '../hooks/UseAuthContext' 
+ 
  const Login = () => {
 
     const [email,setEmail]=useState('')
@@ -13,8 +13,6 @@ import { useAuthContext } from '../hooks/UseAuthContext'
     const [error,setError]=useState(null)
     const user={email,password}
 
-    const value=useAuthContext()
-    console.log(value);
 
     const navigate=useNavigate()
     const dispatch=useDispatch()
@@ -29,6 +27,7 @@ import { useAuthContext } from '../hooks/UseAuthContext'
       }
        else{
        localStorage.setItem("user",response.data.role)
+       localStorage.setItem("name",response.data.name)
         dispatch(loginUser(response.data))
         // toast.success(response.data.Msg)
         setEmail('')

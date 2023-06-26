@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import SideBar from './Components/SideBar'
-// import UserSidebar from './Components/UserSidebar'
 import "./App.css"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import {ToastContainer} from "react-toastify"
@@ -13,33 +12,33 @@ import Mailcomponent from './Components/MailBox/Mailcomponent'
 import Dashboard from './Components/Dashboard/Dashboard'
 import Task from './Components/Tasks/Task'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
+
 
 
 
 
 const App = () => {
-  const [log,setLog]=useState()
- const user=useSelector((state)=>state.user[0])
- console.log(user);
+  const [log,setLog]=useState('')
+//  const user=useSelector((state)=>state.user[0])
+ console.log(log);
 
 useEffect(()=>{
   const value=localStorage.getItem("user")
   setLog(value)
-},[setLog,user])
+},[setLog])
   
   return (
    
-    <div>
+    <div >
  {/* <div style={{position:"fixed"}}>
      <SideBar/>
      </div> */}
-        <BrowserRouter> 
+   
+        <BrowserRouter>
         <ToastContainer/>
             <Routes>
-            <Route path='/' element={
-            log?
-            <SideBar/>:<Login/>}/>
+            <Route path='/' element={log==='admin'?<SideBar/>:<Login/>}/>
             <Route path='/demo' element={<SideBar/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
@@ -52,6 +51,7 @@ useEffect(()=>{
             {window.location.pathname==="/logout"?localStorage.clear():null}
           {/* </div> */}
         </BrowserRouter>
+      
         </div>
    
   )

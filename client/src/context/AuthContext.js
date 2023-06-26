@@ -9,11 +9,11 @@ export const authReducer=(state,action)=>{
         case 'LOGIN':
             return {user:action.payload}
 
-            case 'LOG_OUT':
-                return {user:null}
+        case 'LOG_OUT':
+            return {user:null}
 
-                default:
-                    return state
+        default:
+            return state
     }
 }
 
