@@ -5,6 +5,10 @@ const taskSchema=new Schema({
         type:Number,
         required:true
     },
+    employeeName:{
+        type:String,
+        required:true
+    },
     task:{
         type:String,
         required:true

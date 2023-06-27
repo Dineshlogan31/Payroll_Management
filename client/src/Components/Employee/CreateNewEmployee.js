@@ -17,7 +17,7 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
   const [email,setEmail]=useState('')
   const [mobile,setMobile]=useState('')
   const [password,setPassword]=useState('')
-  const [aadhar,setAadhar]=useState('')
+  const [role,setRole]=useState('')
   const [dateOfBirth,setDOB]=useState('')
   const [dateOfJoining,setDOJ]=useState('')
   const [address,setAddress]=useState('')
@@ -28,11 +28,12 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
   const dispatch=useDispatch()
   
 
-  const employee={firstName,lastName,email,mobile,password,aadhar,dateOfBirth,dateOfJoining,address,city,state,zipcode}
+  const employee={firstName,lastName,email,mobile,password,role,dateOfBirth,dateOfJoining,address,city,state,zipcode}
   
 
   const submitEmployee=(e)=>{
      e.preventDefault();
+     console.log(role);
      dispatch(
       createEmployee(employee)
      )
@@ -54,7 +55,7 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
    setLastName(editEmployee.lastName)
    setEmail(editEmployee.email)
    setMobile(editEmployee.mobile)
-   setAadhar(editEmployee.aadhar)
+   setRole(editEmployee.role)
    setPassword(editEmployee.password)
    setAddress(editEmployee.address)
    setCity(editEmployee.city)
@@ -89,9 +90,29 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
           <Form.Control type="number" name="mobile" value={mobile} onChange={(e)=>{setMobile(e.target.value)}} placeholder="Enter Mobile Number" />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridAadhar">
-          <Form.Label>Aadhar Number</Form.Label>
-          <Form.Control type="text" name="aadhar" value={aadhar} onChange={(e)=>{setAadhar(e.target.value)}} placeholder="Enter Aadhar Number" />
+        <Form.Group as={Col} controlId="formGridAadhar" value={role} >
+          <Form.Label >Role</Form.Label>
+        <Col sm={10} >
+        <Form.Check 
+              type="radio"
+              label="user"
+              name="role"
+              id="role"
+              value="user"
+              checked={role==="user"}
+              onChange={(e)=>setRole(e.target.value)}
+            />
+            <Form.Check
+              type="radio"
+              label="admin"
+              name="role"
+              id="formHorizontalRadios2"
+              value="admin"
+              checked={role==="admin"}
+              onChange={(e)=>setRole(e.target.value)}
+            />
+        </Col>
+        
         </Form.Group>
       </Row>
       <Row className="mb-3">

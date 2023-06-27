@@ -25,8 +25,8 @@ const employeeSchema=new Schema({
         type:Number,
         required:true
     },
-    aadhar:{
-        type:Number,
+    role:{
+        type:String,
         required:true
     },
     dateOfBirth:{

@@ -1,5 +1,6 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
+import { deletEmployee } from "./EmployeeSlicer"
 
 export const addTask=createAsyncThunk(
     "task/addTask",
@@ -42,8 +43,12 @@ const taskSlicer=createSlice({
         state.push(action.payload)
        },
        [getAllTasks.fulfilled]:(state,action)=>{
-        console.log(action.payload);
         return action.payload
+       },
+       [deletEmployee.fulfilled]:(state,action)=>{
+        return state.filter((task)=>{
+            return task.employeeId !== action.payload.user.employeeId
+        })
        }
      }
 })

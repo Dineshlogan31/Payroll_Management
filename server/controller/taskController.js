@@ -1,9 +1,11 @@
 const Tasks=require("../model/taskModel")
 
 const addTask=async(req,res)=>{
-    const {task,employeeId,assignedBy}=req.body
-    console.log({task,employeeId,assignedBy});
-     const addedtask=await Tasks.create({task,employeeId,assignedBy})
+    const {task,employee,assignedBy}=req.body
+     const a=JSON.parse(employee)
+     const employeeName=a.firstName
+     const employeeId=a.employeeId
+     const addedtask=await Tasks.create({task,assignedBy,employeeName,employeeId})
     res.status(200).json(addedtask)
 
 }

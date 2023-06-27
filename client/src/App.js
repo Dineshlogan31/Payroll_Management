@@ -21,7 +21,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   const [log,setLog]=useState('')
 //  const user=useSelector((state)=>state.user[0])
- console.log(log);
 
 useEffect(()=>{
   const value=localStorage.getItem("user")

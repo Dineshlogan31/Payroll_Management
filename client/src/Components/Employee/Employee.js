@@ -38,15 +38,15 @@ const Employee = () => {
     <div style={{position:"relative",marginLeft:"15%"}} >
      <Button onClick={()=>setShow(true)}>Create New Employee</Button><br/>
      <CreateNewEmployee show={show} editEmployee={employeeEdit} clodeModel={()=>setShow(!show)}/>
-       <Table responsive>
-      <thead>
+       <Table responsive striped bordered hover size="sm" style={{marginTop:"20px",marginLeft:"5px",padding:"10px"}}>
+      <thead >
         <tr>
             <th>S.no</th>
             <th>Employee Id</th>
             <th>Employee Name</th>
             <th>Email</th>
             <th>Mobile Number</th>
-            <th>Aadhar</th>
+            <th>Role</th>
             <th> Address</th>
             <th>City</th>
             <th> State</th>
@@ -63,7 +63,7 @@ const Employee = () => {
             <td>{employee.firstName} {employee.lastName}</td>
             <td>{employee.email}</td>
             <td>{employee.mobile}</td>
-            <td>{employee.aadhar}</td>
+            <td>{employee.role}</td>
             <td>{employee.address}</td>
             <td>{employee.city}</td>
             <td>{employee.state}</td>

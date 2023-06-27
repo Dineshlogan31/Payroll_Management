@@ -4,7 +4,7 @@
 
 .main .task-container {
   height: 100vh;
-  width: 85%;
+  width: 100%;
   position: absolute;
   margin-left: 15%;
 }
@@ -27,8 +27,17 @@
 }
 .main .task-container .task-form .task-option select {
   height: 2.5rem;
+  width: 100%;
+}
+.main .task-container .task-form .task-department {
+  height: 20%;
+  width: 30%;
+}
+.main .task-container .task-form .task-department select {
+  height: 2.5rem;
   width: 90%;
 }
+
 .main .task-container .task-form .task-button {
   height: 20%;
   width: 50%;
@@ -44,4 +53,7 @@
   position: absolute;
   margin-top: 20%;
   margin-left: 20%;
+}
+.table-row {
+  padding: 5rem;
 }
