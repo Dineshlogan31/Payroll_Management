@@ -4,7 +4,8 @@ import axios from "axios"
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../Store/UserSlicer'
+import { loggedIn } from '../Store/LoggedUserSlicer'
+
  
  const Login = () => {
 
@@ -26,10 +27,9 @@ import { loginUser } from '../Store/UserSlicer'
         toast.warning(response.data.VerifyMessage)
       }
        else{
-       localStorage.setItem("user",response.data.role)
-       localStorage.setItem("name",response.data.name)
-        dispatch(loginUser(response.data))
-        // toast.success(response.data.Msg)
+       localStorage.setItem("user",JSON.stringify(response.data))
+        const user=JSON.parse(localStorage.getItem("user"))
+        dispatch(loggedIn(user))
         setEmail('')
         setPassword('')
         setError(null)

@@ -5,12 +5,12 @@ export const SideBarData = [
     {
         title:"Dashboard",
         icon:<i style={{color:"white"}} className="fa-solid fa-house"></i>,
-        link:"/Dashboard"
+        link:"/dashboard"
     },
     {
         title:"Documents",
         icon:<i className="fa-solid fa-folder"></i>,
-        link:"/documents"
+        link:"/document"
     },
     {
         title:"Employee",
@@ -20,23 +20,24 @@ export const SideBarData = [
     {
         title:"Tasks",
         icon:<i style={{color:"white"}} className="fa-solid fa-list-check"></i>,
-        link:"/tasks"
+        link:"/task"
     },
     {
         title:"MailBox",
         icon:<i style={{color:"white"}} className="fa-sharp fa-solid fa-chart-simple"></i>,
         link:"/mailbox"
-    },
-    {
-        title:"Settings",
-        icon:<i className="fa-solid fa-gear"></i>,
-        link:"/setting"
-    },
-    {
-        title:"Logout",
-        icon:<i style={{color:"white"}} className="fa-solid fa-right-from-bracket"></i>,
-        link:"/logout"
     }
+    // },
+    // {
+    //     title:"Settings",
+    //     icon:<i className="fa-solid fa-gear"></i>,
+    //     link:"/setting"
+    // }
+    // {
+    //     title:"Logout",
+    //     icon:<i style={{color:"white"}} className="fa-solid fa-right-from-bracket"></i>,
+    //     link:"/logout"
+    // }
    
 
 ]

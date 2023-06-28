@@ -1,11 +1,11 @@
 import React from 'react'
-import SideBar from '../SideBar'
+import SideBar from '../Components/SideBar'
 
 const Dashboard = () => {
   return (
     <>
     <SideBar/>
-    <div>Dashboard</div>
+    <h1 style={{textAlign:"center"}}>DashBoard</h1>
     </>
   )
 }

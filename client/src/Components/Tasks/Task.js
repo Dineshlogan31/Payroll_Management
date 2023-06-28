@@ -1,5 +1,4 @@
 import React ,{useEffect, useState}from 'react'
-import SideBar from '../SideBar'
 import './task.css'
 import { useSelector,useDispatch } from "react-redux"
 import { getAllEmployee } from '../../Store/EmployeeSlicer'
@@ -18,7 +17,8 @@ const [employee,setEmployee]=useState([])
   const tasks=useSelector((state)=>state.task)
   const addTasksSync=(e)=>{
     e.preventDefault()
-    const assignedBy=localStorage.getItem("name")
+    const user=JSON.parse(localStorage.getItem("user"))
+    const assignedBy=user.name
     // console.log("employee",employee);
     dispatch(
       addTask({task,assignedBy,employee})
@@ -34,9 +34,6 @@ const [employee,setEmployee]=useState([])
   return (
   
        <div className='main'>
-        <div>
-        <SideBar/>
-        </div>
         
         <div className='task-container'>
         <h3>No Of Employees:{employees.length}</h3>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React,{useEffect} from 'react'
 import SideBar from './Components/SideBar'
 import "./App.css"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
@@ -8,48 +8,48 @@ import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import ForgetPassword from './Pages/ForgetPassword'
 import Employee from './Components/Employee/Employee'
-import Mailcomponent from './Components/MailBox/Mailcomponent'
-import Dashboard from './Components/Dashboard/Dashboard'
+import Mailcomponent from './Pages/Mailcomponent'
+import Dashboard from './Pages/Dashboard'
+import Document from './Pages/Document'
 import Task from './Components/Tasks/Task'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { useSelector } from 'react-redux'
-
-
-
+import UserSidebar from './Components/UserSidebar'
+import { useSelector,useDispatch } from 'react-redux'
+import { loggedIn } from './Store/LoggedUserSlicer'
 
 
 const App = () => {
-  const [log,setLog]=useState('')
-//  const user=useSelector((state)=>state.user[0])
+  const dispatch=useDispatch()
+ 
+  const loggedUser=useSelector((state)=>state.loggedUser)
+const user=loggedUser[0]
+
+
 
 useEffect(()=>{
-  const value=localStorage.getItem("user")
-  setLog(value)
-},[setLog])
+  const user=JSON.parse(localStorage.getItem("user"))
+  dispatch(loggedIn(user))
+
+},[dispatch])
   
   return (
-   
-    <div >
- {/* <div style={{position:"fixed"}}>
-     <SideBar/>
-     </div> */}
-   
+    <div>
         <BrowserRouter>
+        {user && user.role==="admin"?<SideBar/>:null}
+        {user && user.role==="user"?<UserSidebar/>:null}
         <ToastContainer/>
             <Routes>
-            <Route path='/' element={log==='admin'?<SideBar/>:<Login/>}/>
-            <Route path='/demo' element={<SideBar/>}/>
-              <Route path='/login' element={<Login/>}/>
-              <Route path='/signup' element={<Signup/>}/>
-              <Route path='/forgetPassword' element={<ForgetPassword/>}/>
-              <Route path='/tasks' element={<Task/>}/>
+              <Route path='/' element={!user?<Login/>:null}/>
+              <Route path='/signup' element={!user?<Signup/>:null}/>
+              <Route path='/forgetPassword' element={!user?<ForgetPassword/>:null}/>
+              <Route path='/task' element={<Task/>}/>
               <Route path='/employee' element={<Employee/>}/>
               <Route path='/mailbox' element={<Mailcomponent/>}/>
               <Route path='/dashboard' element={<Dashboard/>}/>
+              <Route path='/document' element={<Document/>}/>
             </Routes>
-            {window.location.pathname==="/logout"?localStorage.clear():null}
-          {/* </div> */}
         </BrowserRouter>
+        
       
         </div>
    

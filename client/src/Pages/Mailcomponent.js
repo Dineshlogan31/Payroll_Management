@@ -1,11 +1,11 @@
 import React from 'react'
-import SideBar from '../SideBar'
+import SideBar from '../Components/SideBar'
 
 const Mailcomponent = () => {
   return (
     <>
     <SideBar/>
-    <div>Mailcomponent</div>
+    <h1 style={{textAlign:"center"}}>MailBox</h1>
     </>
   )
 }

@@ -1,12 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit"
 import employeeReducer from "./EmployeeSlicer"
-import userReducer from "./UserSlicer"
 import taskReducer from "./TaskSlicer"
+import logggedUserReducer from "./LoggedUserSlicer"
 
 export default configureStore({
     reducer:{
       employee:employeeReducer,
-      user:userReducer,
+      loggedUser:logggedUserReducer,
       task:taskReducer
     }
 })
