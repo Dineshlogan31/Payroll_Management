@@ -37,6 +37,18 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
      dispatch(
       createEmployee(employee)
      )
+     setFirstName('')
+    setLastName('')
+    setEmail('')
+    setMobile('')
+    setRole('')
+    setPassword('')
+    setAddress('')
+    setCity('')
+    setState('')
+    setZipcode('')
+    setDOB('')
+    setDOJ('')
      clodeModel()
   } 
 
@@ -45,6 +57,18 @@ const CreateNewEmployee = ({show,editEmployee,clodeModel}) => {
     dispatch(
       editEmployeeAsync({id,employee})
     )
+    setFirstName('')
+    setLastName('')
+    setEmail('')
+    setMobile('')
+    setRole('')
+    setPassword('')
+    setAddress('')
+    setCity('')
+    setState('')
+    setZipcode('')
+    setDOB('')
+    setDOJ('')
     clodeModel()
   }
   

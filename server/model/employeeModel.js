@@ -59,6 +59,28 @@ const employeeSchema=new Schema({
     }
 })
 
+employeeSchema.statics.login= async function(email,password)
+{
+    if(!email)
+    {
+        throw Error("Enter your Email")
+    }
+    if(!password)
+    {
+        throw Error("Enter your Password")
+    }
+    const user=await this.findOne({email})
+    if(!user)
+    {
+        throw Error("User not exist")
+    }
+    if(user.password !== password)
+    {
+     throw Error("Incorrect Password")
+    }
+    return user
+}
+
 const Employee=model("Employee",employeeSchema)
 
 module.exports=Employee

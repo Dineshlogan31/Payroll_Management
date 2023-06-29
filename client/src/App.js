@@ -16,6 +16,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UserSidebar from './Components/UserSidebar'
 import { useSelector,useDispatch } from 'react-redux'
 import { loggedIn } from './Store/LoggedUserSlicer'
+import UserTasks from './Pages/UserTasks'
+import UserProfile from './Pages/UserProfile'
+import Usermailbox from './Pages/Usermailbox'
+import UserDashboard from './Pages/UserDashboard'
+import UserLeave from './Pages/UserLeave'
 
 
 const App = () => {
@@ -40,6 +45,7 @@ useEffect(()=>{
         <ToastContainer/>
             <Routes>
               <Route path='/' element={!user?<Login/>:null}/>
+              <Route path='/login' element={<Login/>}/>
               <Route path='/signup' element={!user?<Signup/>:null}/>
               <Route path='/forgetPassword' element={!user?<ForgetPassword/>:null}/>
               <Route path='/task' element={<Task/>}/>
@@ -47,6 +53,11 @@ useEffect(()=>{
               <Route path='/mailbox' element={<Mailcomponent/>}/>
               <Route path='/dashboard' element={<Dashboard/>}/>
               <Route path='/document' element={<Document/>}/>
+              <Route path='/UserTasks' element={<UserTasks/>}/>
+              <Route path='/UserProfile' element={<UserProfile/>}/>
+              <Route path='/UserMailbox' element={<Usermailbox/>}/>
+              <Route path='/UserDashboard' element={<UserDashboard/>}/>
+              <Route path='/LeaveManagement' element={<UserLeave/>}/>
             </Routes>
         </BrowserRouter>
         

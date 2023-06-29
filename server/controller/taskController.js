@@ -15,4 +15,17 @@ const getAllTasks=async(req,res)=>{
     res.status(200).json(tasks)
 
 }
-module.exports={addTask,getAllTasks}
+const updateTaskStatus=async(req,res)=>{
+  const {_id}=req.body
+  const task=await Tasks.findById({_id})
+  task.status="Completed"
+  task.save()
+  res.status(200).json(task)
+
+}
+const getUserTasks=async (req,res)=>{
+  const {employeeId}=req.params
+  const tasks=await Tasks.find({employeeId})
+  res.status(200).json(tasks)
+}
+module.exports={addTask,getAllTasks,updateTaskStatus,getUserTasks}

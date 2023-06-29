@@ -18,7 +18,7 @@ const [employee,setEmployee]=useState([])
   const addTasksSync=(e)=>{
     e.preventDefault()
     const user=JSON.parse(localStorage.getItem("user"))
-    const assignedBy=user.name
+    const assignedBy=user.firstName
     // console.log("employee",employee);
     dispatch(
       addTask({task,assignedBy,employee})

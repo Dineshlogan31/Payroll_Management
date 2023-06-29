@@ -5,27 +5,27 @@ export const UserSideBarData = [
     {
         title:"Account",
         icon:<i style={{color:"white"}} className="fa-solid fa-house"></i>,
-        link:"/Dashboard"
+        link:"/UserDashboard"
     },
     {
         title:"Profile",
         icon:<i style={{color:"white"}} className="fa-sharp fa-solid fa-chart-simple"></i>,
-        link:"/employee"
+        link:"/UserProfile"
     },
     {
         title:"Tasks",
         icon:<i style={{color:"white"}} className="fa-solid fa-list-check"></i>,
-        link:"/tasks"
+        link:"/UserTasks"
     },
     {
         title:"Chat",
         icon:<i style={{color:"white"}} className="fa-sharp fa-solid fa-chart-simple"></i>,
-        link:"/mailbox"
+        link:"/UserMailbox"
     },
     {
         title:"Leave Management",
         icon:<i className="fa-solid fa-gear"></i>,
-        link:"/setting"
+        link:"/LeaveManagement"
     }
     // {
     //     title:"Logout",

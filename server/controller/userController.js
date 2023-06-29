@@ -1,4 +1,5 @@
 const User=require("../model/userModel")
+const Employee=require("../model/employeeModel")
 const jwt=require("jsonwebtoken")
 const nodemailer=require('nodemailer')
 
@@ -49,11 +50,11 @@ const signupUser=async (req,res)=>{
 const login=async (req,res)=>{
     const {email,password}=req.body
 try {
-    const user=await User.login(email,password)
-    if(user.verified==false)
-    {
-       return res.json({VerifyMessage:"Verify your Email"})
-    }
+    const user=await Employee.login(email,password)
+    // if(user.verified==false)
+    // {
+    //    return res.json({VerifyMessage:"Verify your Email"})
+    // }
     res.status(200).json(user)
 } catch (error) {
     res.status(404).json({error:error.message})
