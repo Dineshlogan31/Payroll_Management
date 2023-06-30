@@ -9,11 +9,13 @@ require("dotenv").config()
 
 const app=express()
 app.use(express.json())
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
 
-app.use(cors({
-    origin:'https://payroll-management-3od1.vercel.app',
-    methods:['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-}))
+app.use(cors(corsOptions))
 
 app.use('/',userRouter)
 app.use('/',employeeRouter)
