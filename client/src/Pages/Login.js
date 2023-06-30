@@ -20,9 +20,7 @@ import { loggedIn } from '../Store/LoggedUserSlicer'
 
     const loginSubmit=(e)=>{
       e.preventDefault()
-      axios.post("https://payroll-management-rouge.vercel.app/login",user,{
-       
-      })
+      axios.post("https://payroll-management-rouge.vercel.app/login",user)
       .then((response)=>{
       if(response.data.VerifyMessage)
       {
