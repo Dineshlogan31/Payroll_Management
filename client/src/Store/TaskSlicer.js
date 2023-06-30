@@ -6,7 +6,7 @@ export const addTask=createAsyncThunk(
     "task/addTask",
     async (payload)=>{
         try {
-           const response= await axios.post("http://localhost:5000/addTask",payload)
+           const response= await axios.post("https://payroll-management-rouge.vercel.app/addTask",payload)
            return response.data
         } catch (error) {
             if(error)
@@ -21,7 +21,7 @@ export const getAllTasks=createAsyncThunk(
     "task/getAllTasks",
     async ()=>{
         try {
-           const response= await axios.get("http://localhost:5000/getAllTasks")
+           const response= await axios.get("https://payroll-management-rouge.vercel.app/getAllTasks")
            return response.data
         } catch (error) {
             if(error)
@@ -35,7 +35,7 @@ export const updateStatusOfTask=createAsyncThunk(
     "task/updateStatusOfTask",
     async (payload)=>{
         try {
-           const response= await axios.put("http://localhost:5000/updateStatusTask",payload)
+           const response= await axios.put("https://payroll-management-rouge.vercel.app/updateStatusTask",payload)
            return response.data
         } catch (error) {
             if(error)
@@ -50,7 +50,7 @@ export const getUserTasks=createAsyncThunk(
     async (payload)=>{
         console.log("Slice Payload",payload);
         try {
-           const response= await axios.get(`http://localhost:5000/getUserTasks/${payload.employeeId}`)
+           const response= await axios.get(`https://payroll-management-rouge.vercel.app/getUserTasks/${payload.employeeId}`)
            return response.data
         } catch (error) {
             if(error)
