@@ -9,11 +9,7 @@ require("dotenv").config()
 
 const app=express()
 app.use(express.json())
-app.use(function(req,res,next)
-{
-    res.setHeader("Access-Control-Allow-Origin", "*")
-    next()
-})
+
 app.use(cors({
     origin:'https://payroll-management-3od1.vercel.app',
     methods:['GET','POST','DELETE','UPDATE','PUT','PATCH'],
