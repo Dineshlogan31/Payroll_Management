@@ -1,7 +1,7 @@
 const express=require("express")
 const mongoose=require("mongoose")
 const userRouter = require("./router/userRouter")
-const cors=require("cors")
+// const cors=require("cors")
 const employeeRouter = require("./router/employeeRouter")
 const taskRouter = require("./router/taskRouter")
 
@@ -17,7 +17,7 @@ app.use((req, res, next) => {
   });
 
 
-app.use(cors())
+// app.use(cors())
 
 app.use('/',userRouter)
 app.use('/',employeeRouter)
