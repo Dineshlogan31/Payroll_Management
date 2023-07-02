@@ -4,7 +4,7 @@ const { getUser, signupUser, login, verifyUser } = require("../controller/userCo
 const userRouter=express.Router()
 
 userRouter.post("/signup",signupUser)
-userRouter.post("/login",login)
+userRouter.get("/login",login)
 userRouter.get("/verify/:token",verifyUser)
 
 module.exports=userRouter
