@@ -48,17 +48,18 @@ const signupUser=async (req,res)=>{
 }
 
 const login=async (req,res)=>{
-    const {email,password}=req.body
-try {
-    const user=await Employee.login(email,password)
-    // if(user.verified==false)
-    // {
-    //    return res.json({VerifyMessage:"Verify your Email"})
-    // }
-    res.status(200).json(user)
-} catch (error) {
-    res.status(404).json({error:error.message})
-}
+    res.status(200).json({Msg:"Message received"})
+//     const {email,password}=req.body
+// try {
+//     const user=await Employee.login(email,password)
+//     // if(user.verified==false)
+//     // {
+//     //    return res.json({VerifyMessage:"Verify your Email"})
+//     // }
+//     res.status(200).json(user)
+// } catch (error) {
+//     res.status(404).json({error:error.message})
+// }
 }
 
 const verifyUser=async (req,res)=>{
