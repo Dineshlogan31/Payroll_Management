@@ -6,7 +6,7 @@ export const getUserLeave=createAsyncThunk(
     "leave/getAllLeave",
     async (payload)=>{
         try {
-           const response= await axios.get(`http://localhost:5000/getUserLeave/${payload.employeeId}`)
+           const response= await axios.get(`https://payroll-management.onrender.com/getUserLeave/${payload.employeeId}`)
            return response.data
         } catch (error) {
             if(error)
