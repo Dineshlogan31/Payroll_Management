@@ -56,6 +56,53 @@ const employeeSchema=new Schema({
     zipcode:{
         type:Number,
         required:true
+    },
+    leave:{
+        CausualLeave:{
+        type:Number,
+        required:true,
+        default:2
+        },
+    AnnualLeave:{
+            type:Number,
+            required:true,
+            default:7
+            },
+     SickLeave:{
+        type:Number,
+        required:true,
+        default:1
+     },
+    PaidLeave:{
+        type:Number,
+        required:true,
+        default:3
+        },     
+     Maternity:{
+        type:Number,
+        required:true,
+        default:50
+        },        
+     Paternity:{
+        type:Number,
+        required:true,
+        default:15
+        },             
+     LossOfpay:{
+        type:Number,
+        required:true,
+        default:3
+        },                  
+    MarriageLeave:{
+        type:Number,
+        required:true,
+        default:7
+        },                        
+    BereavementLeave:{
+        type:Number,
+        required:true,
+        default:3
+        }                             
     }
 })
 
