@@ -5,16 +5,13 @@ import { getUserLeave } from '../Store/LeaveSlicer'
 
 const UserLeave = () => {
   const user=useSelector((state)=>state.leave)
-  const leave= user[0].leave
-  let types=Object.keys(leave)
-  console.log("hii",types);
   const dispatch=useDispatch()
   
  
   
   useEffect(()=>{
-    const user=JSON.parse(localStorage.getItem("user"))
-     dispatch(getUserLeave(user))
+    const LoggedPerson=JSON.parse(localStorage.getItem("user"))
+     dispatch(getUserLeave(LoggedPerson))
   },[dispatch])
 
   return (
@@ -24,15 +21,21 @@ const UserLeave = () => {
    
     
     <div className='leave-container'>
-    {Array.isArray(types) && types.map((value,index)=>{
-     return( <div key={index} className='leave-card'>
-      <h5>{value}</h5>
-      <span >{leave[value]}</span>
-     </div>)
-    })}
+       {user.map((employee) => (
+        <div className='leave-container' key={employee.employeeId}>
+          {Object.entries(employee.leave).map(([key, value]) => (
+            <div className='leave-card' key={key}>
+             <h4>{key}</h4>
+             <span>{value}</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    
     </div>
     </div>
   )
 }
+
 
 export default UserLeave
