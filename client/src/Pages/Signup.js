@@ -25,7 +25,7 @@ const Signup = () => {
 
     const signupSubmit=async (e)=>{
            e.preventDefault()
-       axios.post("https://payroll-management-rouge.vercel.app/signup",user)
+       axios.post("https://payroll-management.onrender.com/signup",user)
        .then((response)=>{
                  toast(response.data.Msg)
                  setName('')

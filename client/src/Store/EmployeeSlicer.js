@@ -5,7 +5,7 @@ export const createEmployee = createAsyncThunk(
     "api/createEmployee",
     async (payload) => {
         try {
-            const response = await axios.post("https://payroll-management-rouge.vercel.app/createEmployee", payload)
+            const response = await axios.post("https://payroll-management.onrender.com/createEmployee", payload)
             return response.data
         } catch (error) {
             console.error(error);
@@ -18,7 +18,7 @@ export const deletEmployee = createAsyncThunk(
     "api/deleteEmployee",
     async (payload) => {
         try {
-            const response = await axios.delete(`https://payroll-management-rouge.vercel.app/deleteEmployee/${payload._id}`)
+            const response = await axios.delete(`https://payroll-management.onrender.com/deleteEmployee/${payload._id}`)
             return response.data
         } catch (error) {
             console.error(error);
@@ -30,7 +30,7 @@ export const editEmployeeAsync = createAsyncThunk(
     "api/editEmployee",
     async (payload) => {
         try {
-            const response = await axios.put(`https://payroll-management-rouge.vercel.app/editEmployee/${payload.id}`, payload.employee)
+            const response = await axios.put(`https://payroll-management.onrender.com/editEmployee/${payload.id}`, payload.employee)
             return response.data
         } catch (error) {
             console.error(error);
@@ -43,7 +43,7 @@ export const getAllEmployee = createAsyncThunk(
     "api/getAllEmployee",
     async () => {
         try {
-            const response = await axios.get("https://payroll-management-rouge.vercel.app/getAllEmployee")
+            const response = await axios.get("https://payroll-management.onrender.com/getAllEmployee")
             return response.data
         } catch (error) {
             console.error(error);
