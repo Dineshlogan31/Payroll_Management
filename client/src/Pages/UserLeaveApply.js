@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import {useDispatch} from 'react-redux'
 import { applyLeaveByEmployee } from '../Store/LeaveSlicer';
+import '../Css/userLeave.css'
 
 
 const UserLeaveApply = ({show,applyUser,closeModel}) => {
