@@ -38,7 +38,7 @@ useEffect(()=>{
 },[dispatch])
   
   return (
-    <div>
+    <div className='app-container'>
         <BrowserRouter>
         {user && user.role==="admin"?<SideBar/>:null}
         {user && user.role==="user"?<UserSidebar/>:null}
