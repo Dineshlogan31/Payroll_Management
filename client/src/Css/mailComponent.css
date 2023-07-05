@@ -1,7 +1,8 @@
 .mail-container {
   height: 40%;
   width: 100%;
-  margin-left: 20%;
+  position: absolute;
+  margin-left: 15%;
 }
 .mail-container table {
   height: 80%;
