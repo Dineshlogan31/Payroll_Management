@@ -1,0 +1,13 @@
+.mail-container {
+  height: 40%;
+  width: 100%;
+}
+.mail-container table {
+  height: 80%;
+  width: 100%;
+  background-color: aqua;
+  border: 1px solid black;
+}
+.mail-container table tbody tr {
+  background-color: aqua;
+}

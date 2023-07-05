@@ -16,6 +16,35 @@ export const getUserLeave=createAsyncThunk(
         }
     }
 )
+export const applyLeaveByEmployee=createAsyncThunk(
+    "leave/applyLeave",
+    async (payload)=>{
+        try {
+            const response=await axios.post("https://payroll-management.onrender.com/applyLeave",payload)
+            console.log(response.data);
+            return response.data
+        } catch (error) {
+            if(error)
+            {
+                return error
+            }
+        }
+    }
+)
+export const getAllLeaveAppliedByEmployee=createAsyncThunk(
+    "leave/getAllLeaveAppliedByEmployee",
+    async ()=>{
+        try {
+            const response=await axios.get("https://payroll-management.onrender.com/getAllLeaveAppliedByEmployee")
+            return response.data
+        } catch (error) {
+            if(error)
+            {
+                return error
+            }
+        }
+    }
+)
 
 
 
@@ -28,6 +57,12 @@ const leaveSlicer=createSlice({
      },
      extraReducers:{
        [getUserLeave.fulfilled]:(state,action)=>{
+        return action.payload
+       },
+       [applyLeaveByEmployee.fulfilled]:(state,action)=>{
+       return state
+       },
+       [getAllLeaveAppliedByEmployee.fulfilled]:(state,action)=>{
         return action.payload
        }
         }
