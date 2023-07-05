@@ -16,7 +16,7 @@ body {
   height: 100%;
   width: 15%;
   background-color: #242d4b;
-  position: fixed;
+  position: sticky;
   margin: 0px;
   padding: 0px;
 }
